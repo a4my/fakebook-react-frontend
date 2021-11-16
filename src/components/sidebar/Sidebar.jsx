@@ -10,6 +10,8 @@ import {
   Event,
   School
 } from '@material-ui/icons'
+import { Users } from '../../dummyData'
+import CloseFriends from '../closeFriends/CloseFriends'
 
 export default function Sidebar() {
   return (
@@ -56,102 +58,9 @@ export default function Sidebar() {
         <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/1.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Elon Musk</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/2.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Thomas Pesquet</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/3.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Paul Watson</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/4.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Bill Gates</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/5.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Greta Thunberg</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/6.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Sid Meier</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/7.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">David Attenborough</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/8.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Barack Obama</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/9.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Leonardo Dicaprio</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/10.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Luc Besson</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/11.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Bernad Werber</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/person/12.jpg"
-              alt=""
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFiendName">Lady Gaga</span>
-          </li>
+          {Users.map(u => (
+            <CloseFriends key={u.id} user={u} />
+          ))}
         </ul>
       </div>
     </div>
